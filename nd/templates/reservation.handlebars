@@ -1,0 +1,127 @@
+<div>
+    <main>
+    <form action="/reservation-submit" method="POST">
+    <div class="header-class">
+        <header class="container">
+    <h3>Registracija vizitui dėl kataraktos gydymo</h3>
+</header>
+</div>
+<div class="content-class">
+    <div class="siunt">
+        <h6>Ar turite siuntimą kataraktos konsultacijai?</h6>
+        <div class="form-radio-body">
+        <div class="form-radio">
+        <input type="radio" required="required" name="siuntimas" value=true id="Taip1">
+        <label for="Taip1" class="form-radio-switch">Taip</label>
+        </div>
+        <div class="form-radio">
+            <input type="radio" required="required" name="siuntimas" value=false id="Ne1">
+            <label for="Ne1" class="form-radio-switch">Ne</label>
+        </div>
+        </div>
+    </div>
+    <div class="filialas">
+        <label for="filial"> <h6>Pasirinkitė Filialą</h6></label> <br/>
+        <select name="filial" id="filial" required>
+            <option value="Vilnius">Vilnius</option>
+            <option value="Kaunas">Kaunas</option>
+            <option value="Alytus">Alytus</option>
+            <option value="Klaipėda">Klaipėda</option>
+            </select>
+    </div>
+    <div class="time">
+            <label>Pasirinkite datą ir laiką</label> <br/>
+            <input type="date" name="date" required/>
+            <input type="time" name="time" value="08:00" min="08:00" max="18:00" required="required" />
+            <p style="font-Size:11px"><i>Klinika dirbą šiokiadieniais nuo 08:00 iki 18:00</i></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <label for="vardas">Vardas <span style="color:red">*</span></label> <br/>
+        <input type="text" name="vardas" id="vard" required/>
+                </div>
+                <div class="col-sm-6">
+        <label for="pavarde">Pavardė <span style="color:red">*</span></label> <br/>
+        <input type="text" name="pavarde" id="pavard" required/>
+        </div>
+        <div class="col-sm-6">
+        <label for="email">El.Paštas <span style="color:red">*</span></label> <br/>
+        <input type="email" name="email" id="eml" required='required' />
+        </div>
+        <div class="col-sm-6">
+        <label for="mobilus">Mobilus <span style="color:red">*</span></label> <br/>
+        <input type="phone" name="mobilus" id="mob" required='required' />
+        </div>
+        <div class="col-sm-6">
+            <label for="age">Amžius </label> <br/>
+        <input type="number" name="age" id="age" />
+        </div>
+        <div class="col-sm-6">
+            <label for="skundziasi">Kuom skundžiatės</label> <br/>
+            <textarea name="skundziasi" id="" cols="30" rows="4"></textarea>
+        </div>
+    </div>
+    <div class="sutikimas">
+        <input type="checkbox" name="sutikimas" required>  <span style="color:red">*</span> Sutinku su privatumo politika
+        <button class="btn-primary" type="submit">Rezervuoti</button>
+    </div>
+    </form>
+    </main>
+</div>
+<style>
+    .container {
+        text-align: center;
+        margin-top: 2rem;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .form-radio {
+        border: 1px solid black;
+        justify-content: center;
+        width: 70px;
+        background-color: aliceblue;
+    }
+    .siunt, .filialas {
+        text-align: center;
+    }
+    .form-radio-body {
+        display: flex;
+        justify-content: center;
+    }
+    .time {
+        text-align: center;
+    }
+    .content-class {
+        background-color: azure;
+        max-width: fit-content;
+        margin: 0 auto;
+        border: 1px dotted blue;
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+    .filialas {
+        margin: 1rem 0;
+    }
+    .row {
+        background-color: azure;
+        max-width: 40%;
+        margin: 2rem auto;
+        border: 1px dotted blue;
+        padding: 1rem;
+        overflow-wrap: normal;
+    }
+    .row div {
+        width:fit-content;
+        grid-column: 6fr;
+    }
+    .sutikimas {
+         background-color: azure;
+        width: 40%;
+        margin: 2rem auto;
+        border: 1px dotted blue;
+        padding: 1rem;
+    }
+    .sutikimas button {
+        float: right;
+    }
+</style>

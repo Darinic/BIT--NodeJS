@@ -1,0 +1,72 @@
+<form method="POST" action="/upload_file" enctype="multipart/form-data">
+  <input type="file" name="photo" />
+  <br />
+  <input type="text" name="author" placeholder="Author" maxlength="40" />
+  <br />
+  <textarea
+    name="description"
+    placeholder="Add Description"
+    cols="50"
+    rows="4"
+    maxlength="200"
+  ></textarea>
+  <br />
+  <button type="submit">Siųsti</button>
+</form>
+
+{{#if photos}}
+  <div class="gallery">
+    <div class="grid-container">
+      {{#each photos}}
+        <div data-id="{{id}}" class="grid-item"><img
+            src="/uploads/{{picture}}"
+            alt=""
+          />
+          {{#if author}}
+            <p>{{author}}</p>
+          {{else}}
+            <p>Autorius nežinomas</p>
+          {{/if}}
+          {{#if description}}
+            <p>{{description}}</p>
+          {{else}}
+            <p class="description">Aprašymo nereikia</p>
+          {{/if}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+{{else}}
+  <div><h1>Nėra pridėtų nuotraukų</h1></div>
+{{/if}}
+
+<style>
+  .gallery { 
+      margin-top: 2rem; 
+      } 
+  .grid-container { 
+      display:grid;
+      grid-template-columns: repeat(3, 1fr); 
+      grid-template-rows: 1fr auto; 
+      gap: 2px; 
+      } 
+  .grid-item { 
+      overflow: hidden;
+       object-fit: cover;
+       text-align: center; 
+       margin-bottom: 0.5rem;
+       } 
+  .grid-item p {
+    font-size: 18px;
+    margin: 0px;
+    background-image: linear-gradient(to right, orange,yellow);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  .grid-item .description {
+    font-size: 14px;
+  }
+  .grid-item img { 
+      max-height: 100%; 
+      max-width: 100%; 
+      }
+</style>

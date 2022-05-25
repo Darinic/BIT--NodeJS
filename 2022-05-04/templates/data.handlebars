@@ -1,0 +1,103 @@
+{{#each masyvas}}
+{{#if isActive}}
+<div class="card">
+    <span class="headerid">Id:{{_id}}</span> <span class="headerReg">Registered:{{registered}}</span>
+<header class="header"><h1>{{name}}</h1></header>
+<div class="body">
+<div class="bio">
+    <p class="introduction">
+    Balance: {{balance}} <br/>
+    Age: {{age}} <br/>
+    Eye Color: {{eyeColor}} <br/>
+    Gender: {{gender}} <br/>
+    Company: {{company}} <br/>
+    Email: {{email}} <br/>
+    Phone: {{phone}} <br/>
+    About me: {{about}}
+    </p>
+    </div>
+    <div class="Info">
+        <h5>Friends of the day:</h5>
+        <div>
+        {{#each friends}}
+        <li>{{name}}</li>
+        {{/each}}
+        </div>
+        <h5>Tags of the Day:</h5>
+        <div class="tags">
+        {{#each tags}}
+        <li>{{this}}</li>
+        {{/each}}
+        </div>
+    </div>
+    <div class="notifications">
+        <p>{{greeting}} !!!!</p>
+        <p>Your Fruit of the day: <strong><i>{{favoriteFruit}}</i></strong></p>
+    </div>
+    </div>
+
+</div>
+{{/if}}
+{{/each}}
+
+{{!-- {{{masyvas}}} --}}
+
+<style>
+    .card {
+        background-color: aliceblue;
+        border-radius: 25px;
+        padding: 15px;
+        margin: 2rem;
+    }
+
+    .header {
+        justify-content: center;
+        display: flex;
+    }
+    .headerid {
+        float: right;
+        font-size: 12px;
+    }
+    .headerReg {
+        float: left;
+        font-size: 12px;
+    }
+    .bio {
+        max-width: 33%;
+    }
+    .introduction {
+        line-height: 1.5rem;
+    }
+    .body {
+        display: flex
+    }
+
+    .Info {
+        padding-left: 3rem;
+        font-size:xx-large;
+        width: 33%;
+    }
+    .Info h5 {
+        margin-top: 4px;
+        margin-bottom: 0.8rem;
+        color: red;
+    }
+    .tags {
+        font-size: 14px;
+    }
+    .notifications p:first-child{
+        background-color: black;
+        border: 1px solid black;
+        border-radius: 10px;
+        color: white;
+        font-weight: bolder;
+        padding: 5px;
+    }
+    .notifications {
+        text-align: end;
+    }
+</style>
+
+
+
+

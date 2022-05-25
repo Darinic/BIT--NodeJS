@@ -1,0 +1,50 @@
+<div class="centerForm">
+<form action="/newclient-submit" method="POST">
+    <h2 style="color: red;">{{error}}</h2>
+    <h2>Naujo kliento sukūrimas</h2>
+        <label>Įmones pavadinimas:</label>
+        <input type="text" name="imone" placeholder="Įveskite įmonės pavadinimą" /> <br/>
+        <label>Vardas ir Pavardė:</label>
+        <input type="text" name="vardPavarde" placeholder="Įveskite vardą ir pavardą" /> <br/>
+        <label>Adresas:</label>
+        <input type="text" name="adresas" placeholder="Įveskite kliento adresą" /> <br/>
+        <label>Telefono numeris:</label>
+        <input type="phone" name="telefonas" placeholder="Įveskite kliento tel. numerį" /> <br/>
+        <label>El.pastas:</label>
+        <input type="email" name="elpastas" placeholder="Įveskite kliento el.paštą" /> <br/>
+        <label>PVM Kodas:</label>
+        <input type="text" name="pvmkodas" placeholder="Įveskite kliento PVM kodą" /> <br/>
+        <div class="centerbtn">
+        <button class="btn btn-primary" type="submit">Siūsti</button>
+        </div>
+    </form>
+    </div>
+
+    <style>
+        form {
+            display: block;
+            background-color: aliceblue;
+            border-radius: 15px;
+            margin-top: 3rem;
+            max-width: fit-content;
+            padding: 1rem;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        label {
+            width: 10rem;
+            padding-bottom: 0.5rem;
+        }
+        input {
+            width: 20rem;
+        }
+        .centerbtn {
+            text-align: end;
+        }
+        .centerForm {
+            display: flex;
+            justify-content: center;
+        }
+    </style>

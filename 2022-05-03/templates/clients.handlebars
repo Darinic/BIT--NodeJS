@@ -1,0 +1,74 @@
+<div class="main-navig">
+<div class="navig">
+    <a href="/logout" class="btn-primary">Logout</a>
+    <button class="btn-primary">Sveiki, {{user.username}}</button>
+        <a href="/newclient" class="btn-primary">Sukurti naują klientą</a>
+</div>
+<div class="info"> 
+BIT Microsoft
+<img src="assets/img/microsoft.jpg" alt="picture" />
+</div>
+</div>
+
+<div class="main-body">
+{{#if masyvas}}
+{{#each masyvas}}
+<div class="card"> 
+    <p>
+    <strong>Įmonės pavadinimas:</strong> {{imone}} <br/>
+    <strong>Vardas Pavardė:</strong> {{vardPavard}} <br/>
+    <strong>Adresas:</strong> {{adresas}} <br/>
+    <strong>Telefonas:</strong> {{telefonas}} <br/>
+    <strong>El.pastas:</strong> {{elpastas}} <br/>
+    <strong>PVM kodas:</strong> {{pvmkodas}} <br/>
+    </p>
+</div>
+{{/each}}
+{{else}}
+<div><h1>Nėra nei vieno priregistruoto kliento</h1></div>
+{{/if}}
+</div>
+
+
+<style>
+    .main-body {
+        margin: 0.5rem;
+        margin-top: 4rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card {
+        display: inline-block;
+        border-radius: 10px;
+        background-image: linear-gradient(to right, yellow, rgb(235, 151, 27));
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+    .info img{
+        height: 3rem;
+        width: 3rem;
+    }
+    .navig button {
+        padding: 8px;
+        position: relative;
+        float: right;
+        height: 3rem;
+    }
+    .info {
+        padding-left: 1rem;
+        line-height: 3rem;
+        font-weight: 900;
+    }
+    {{!-- .navig {
+        width: 100%;
+        position: fixed;
+        z-index: 5;
+    } --}}
+    .main-navig {
+        background-color: aliceblue;
+        position: fixed;
+        top: 0;
+        z-index: 5;
+        width: 100%;
+    }
+</style>

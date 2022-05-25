@@ -1,0 +1,42 @@
+<div class="header"><h1>Sveiki Admin</h1></div>
+<div class="content">
+{{#each parsedJson }}
+<div class="card">
+    <div><strong>Vardas/Pavardė:</strong> {{vardas}} {{pavarde}}</div>
+    <div><strong>Data ir laikas:</strong> {{date}} {{time}}</div>
+<div> 
+    {{#if siuntimas}}
+    <p><strong>Siuntimas yra turimas</strong></p>
+    {{else}}
+    <p><strong>Siuntimo neturi</strong></p>
+    {{/if}}
+</div>
+    <div>
+        <p><i>El.paštas:</i> {{email}}</p>
+        <p><i>Mobilus:</i> {{mobilus}}</p>
+        <p><i>Amžius:</i> {{age}}</p>
+    </div>
+    <div><strong>Skundžiasi:</strong> {{skundziasi}}</div>
+    <div><button class="btn-primary delete-button" data-id="{{@index}}">Ištrinti</button></div>
+</div>
+{{/each}}
+</div>
+<style>
+    .content {
+        display: flex;
+    }
+    .card {
+        margin: 2rem;
+        display: flex;
+        max-width: fit-content;
+        padding: 1rem;
+        background-color: bisque;
+    }
+    .header {
+        text-align: center;
+    }
+    .card p {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+</style>
